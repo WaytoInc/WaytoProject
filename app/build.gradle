@@ -1,0 +1,66 @@
+ext {
+    V_CODE = "1"
+    V_NAME = "1.0.0"
+    schema = "Wayto"
+
+    application_id = "com.angcyo.waytoproject"
+    plugin_name = "com.angcyo.waytoproject"
+}
+
+apply from: allGradle.key
+
+android {
+    defaultConfig {
+        buildConfigField "String", "CUSTOM_URL", '"http://api.beta.wayto.com.cn/"'
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    productFlavors {
+        //develop
+        _dev {
+
+        }
+        //preview
+        pre {
+            buildConfigField "String", "CUSTOM_URL", '"http://api.wayto.com.cn/"'
+        }
+        //apk
+        apk {
+            buildConfigField "String", "CUSTOM_URL", '"http://api.wayto.com.cn/"'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    implementation project(allModule.plugin)
+    implementation project(allModule.objectbox)
+    implementation project(allModule.Camera)
+//    implementation project(allModule.tesstwo)
+//    implementation project(allModule.opencv)
+//    implementation project(allModule.ex)
+//    implementation project(allModule.mapbox)
+    implementation project(allModule.map)
+//    implementation project(allModule.rcode)
+//    implementation project(allModule.mqtt)
+//    implementation project(allModule.websocket)
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+
+    //高版本需要AndroidX的支持
+    api "com.airbnb.android:lottie:2.7.0"
+}
+
+apply from: allGradle.plugin
+apply from: allGradle.v7a
+apply plugin: 'kotlin-kapt'
+apply plugin: 'io.objectbox'
+
+apply from: allGradle.makeDex
+apply from: allGradle.excludeDex
