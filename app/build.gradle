@@ -13,7 +13,7 @@ android {
     defaultConfig {
         buildConfigField "String", "CUSTOM_URL", '"http://api.beta.wayto.com.cn/"'
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     productFlavors {
@@ -40,21 +40,26 @@ android {
 dependencies {
     implementation project(allModule.plugin)
     implementation project(allModule.objectbox)
-    implementation project(allModule.Camera)
+//    implementation project(allModule.Camera)
 //    implementation project(allModule.tesstwo)
 //    implementation project(allModule.opencv)
 //    implementation project(allModule.ex)
 //    implementation project(allModule.mapbox)
-    implementation project(allModule.map)
+//    implementation project(allModule.map)
 //    implementation project(allModule.rcode)
 //    implementation project(allModule.mqtt)
 //    implementation project(allModule.websocket)
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    //高版本需要AndroidX的支持
-    api "com.airbnb.android:lottie:2.7.0"
+//    //高版本需要AndroidX的支持
+//    def lottieVersion = "3.1.0"
+//    api("com.airbnb.android:lottie:$lottieVersion") {
+//        exclude group: 'androidx.appcompat'
+//        exclude group: 'androidx.annotation'
+//    }
 }
 
 apply from: allGradle.plugin
