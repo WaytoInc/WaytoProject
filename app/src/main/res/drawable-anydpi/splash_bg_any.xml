@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/base_white" />
-<!--    <item>-->
+<!--    <item android:bottom="180dp">-->
 <!--        <bitmap-->
-<!--            android:gravity="top|center_horizontal"-->
+<!--            android:gravity="fill|center"-->
 <!--            android:src="@drawable/company_top_bg" />-->
 <!--    </item>-->
 <!--    <item android:top="100dp">-->
@@ -12,6 +12,8 @@
 <!--            android:src="@drawable/company_logo" />-->
 <!--    </item>-->
 <!--    <item android:bottom="80dp">-->
-<!--        <bitmap android:gravity="bottom|center_horizontal" android:src="@drawable/splash_bottom"/>-->
+<!--        <bitmap-->
+<!--            android:gravity="bottom|center_horizontal"-->
+<!--            android:src="@drawable/splash_bottom" />-->
 <!--    </item>-->
 </layer-list>
